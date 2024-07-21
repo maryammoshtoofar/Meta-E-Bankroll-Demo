@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web3 Project Demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h1 class="title">Web3 Project Demo</h1>
+        <div class="videoPlayer">
+          <video src="./Web3-Project-Demo.mp4"></video>
+          <div class="videoProgressBar">
+            <div class="videoProgressDuration"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="controls">
+            <div class="leftControls">
+              <div class="volume">
+                <i class="fa-solid fa-volume-high"></i>
+                <input type="range" value="100" />
+              </div>
+            </div>
+            <div class="centerControls">
+              <div class="currentVideoDuration">
+                <p>00:00</p>
+              </div>
+
+              <div class="reverseVideo">
+                <i class="fa-solid fa-backward"></i>
+              </div>
+
+              <div class="playPauseBtn">
+                <i class="fa-solid fa-play playBtn"></i>
+                <i class="fa-solid fa-pause hide pauseBtn"></i>
+              </div>
+
+              <div class="forwardVideo">
+                <i class="fa-solid fa-forward"></i>
+              </div>
+
+              <div class="totalVideoDuration">
+                <p></p>
+              </div>
+            </div>
+            <div class="rightControls">
+              <div class="fullScrean">
+                <i class="fa-solid fa-expand"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

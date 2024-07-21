@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(0, 4, 124);
+  background: radial-gradient(
+    circle,
+    rgba(0, 4, 124, 0.8267682072829132) 49%,
+    rgba(66, 57, 63, 0.9780287114845938) 100%
+  );
+}
+
+section {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container .videoPlayer {
+  height: 100%;
+  display: flex;
+  max-width: 700px;
+  margin: 0px 10px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s;
+  border-radius: 0.3rem;
+  justify-content: center;
+}
+
+.container .videoPlayer.active {
+  box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.06);
+}
+
+.container .videoPlayer video {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 0.3rem;
+}
+
+.controls {
+  bottom: 0%;
+  opacity: 0;
+  height: 3rem;
+  color: #fff;
+  display: flex;
+  min-width: 100%;
+  max-width: 100%;
+  position: relative;
+  position: absolute;
+  align-items: center;
+  transition: all 0.2s;
+  transform: translateY(5rem);
+  justify-content: space-between;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8) 80%);
+}
+
+.videoPlayer.active .controls {
+  opacity: 1;
+  transform: translateY(0rem);
+}
+
+.videoPlayer .videoProgressBar {
+  width: 94%;
+  opacity: 0;
+  bottom: 13%;
+  display: flex;
+  height: 0.3rem;
+  cursor: pointer;
+  border-radius: 5px;
+  position: absolute;
+  align-items: center;
+  transition: all 0.2s;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(5rem);
+}
+
+.videoPlayer.active .videoProgressBar {
+  opacity: 1;
+  transition: all 0.2s;
+  transform: translateY(0rem);
+}
+
+.videoPlayer .videoProgressBar.active,
+.videoPlayer .videoProgressBar.active .videoProgressDuration {
+  height: 0.4rem;
+}
+
+.videoPlayer .videoProgressBar .dot {
+  left: 0%;
+  width: 1.1rem;
+  height: 1.1rem;
+  max-width: 100%;
+  position: absolute;
+  border-radius: 50%;
+  cursor: context-menu;
+  background-color: #3968bf;
+}
+
+.videoPlayer .videoProgressBar .videoProgressDuration {
+  width: 0%;
+  height: 0.3rem;
+  max-width: 100%;
+  position: absolute;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #3968bf;
+}
+
+.videoPlayer .controls i {
+  color: #fff;
+}
+
+.leftControls,
+.centerControls,
+.rightControls {
+  display: flex;
+}
+
+.controls .centerControls {
+  margin-left: -2rem;
+}
+
+.controls .leftControls .volume {
+  display: flex;
+  font-size: 1rem;
+  margin-left: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls .leftControls .volume i {
+  cursor: pointer;
+}
+
+.controls .leftControls .volume input[type="range"] {
+  width: 80%;
+  height: 0.3rem;
+  cursor: pointer;
+  appearance: none;
+  overflow: hidden;
+  margin-left: 0.4rem;
+  transition: all 0.2s;
+  border-radius: 0.5rem;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.controls .leftControls .volume input[type="range"]:hover {
+  height: 0.6rem;
+}
+
+.controls .leftControls .volume input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 40px;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: -100vw 0 0 100vw #3968bf;
+  border: 2px solid #999;
+}
+
+.controls
+  .leftControls
+  .volume
+  input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  color: #13bba4;
+}
+
+.controls .rightControls {
+  margin-right: 2.5rem;
+}
+
+.controls .rightControls i {
+  cursor: pointer;
+  color: #fff;
+}
+
+.controls .rightControls div {
+  margin-left: 1rem;
+}
+
+.centerControls div {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.centerControls div:first-child {
+  cursor: auto;
+  margin-left: 0rem;
+}
+
+.centerControls div:last-child {
+  cursor: auto;
+  margin-right: 0rem;
+}
+
+.hide {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .leftControls {
+    margin-left: -1.5rem !important;
+  }
+
+  .leftControls .volume {
+    margin-right: 2.5rem;
+  }
+
+  .leftControls .volume input {
+    display: none;
+  }
+
+  .centerControls {
+  }
+
+  .rightControls {
+    margin-right: 1rem !important;
+  }
+}
+
+.title {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 20px;
+}
