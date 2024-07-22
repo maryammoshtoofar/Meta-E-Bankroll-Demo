@@ -76,10 +76,11 @@ section {
 }
 
 .videoPlayer .videoProgressBar {
+  display: none;
   width: 94%;
   opacity: 0;
   bottom: 13%;
-  display: flex;
+  /* display: flex; */
   height: 0.3rem;
   cursor: pointer;
   border-radius: 5px;

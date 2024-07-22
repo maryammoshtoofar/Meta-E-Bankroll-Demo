@@ -45,8 +45,9 @@ videoProgressBar.addEventListener("click", function (e) {
   let videoDuration = video.duration;
   let progressWidthValue = this.clientWidth;
   let clickOffestX = e.offsetX;
-
   video.currentTime = (clickOffestX / progressWidthValue) * videoDuration;
+  pauseBtn.classList.toggle("hide");
+  playBtn.classList.toggle("hide");
 });
 
 fullScrean.addEventListener("click", function () {
